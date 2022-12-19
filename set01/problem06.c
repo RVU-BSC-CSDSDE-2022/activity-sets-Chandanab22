@@ -12,11 +12,10 @@ int main(){
   output(a,b,c,l);
   
 }
-
 int input(){
   int x;
   printf("enter a number\n");
-  scanf("%d",&x);
+  if(scanf("%d",&x)!=1);
   return(x);
 }
 
