@@ -21,7 +21,7 @@ int input(){
   }
 int compare(int a, int b , int c)
 {
-  if( a>=b && a>=c)     
+  if( a>=b && a>=c)     //using and operator
     return a;             
   if( b>=c )          
     return b;            
