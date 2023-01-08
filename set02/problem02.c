@@ -9,7 +9,7 @@ int main(){
   input(a,b);
   return 0;
 }
-int input_side();{
+int input_side(){
 int isscalene;
 printf("enter the value a:");
 scanf("%d", &a);
@@ -18,11 +18,19 @@ scanf("&d", &b);
 printf("enter the vlaue c:");
 scanf("%d", &c);
 check_scalene(a, b, c, &isscalene);
-output(a, b, c);
+return(a, b, c);
 }
 
-int check_scalene(int a, int b, int c);{
-  
+int check_scalene(int a, int b, int c)
+  if(side1 == side2 || side1 == side3 || side2 == side3){
+  {
+    printf("The triangle with three sides %d,%d and %d is scalene triangle");
+  }
+ 
+  }
+void output(int a, int b, int c, int isscalene);
+{
+  printf("the triangle", a,b,c);
 }
 
 
