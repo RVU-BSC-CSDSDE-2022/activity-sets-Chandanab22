@@ -7,7 +7,7 @@ int sum_composite_numbers(int n, int a[n]);
 void output(int sum);
 
 int main(){
-  int sum,a;
+  int sum,n;
   n=input_array_size();
   int a[n];
   input_array(n,a);
@@ -17,9 +17,9 @@ int main(){
 
 int input_array_size(){
   int a;
-  printf("%d", &a);
-{
-    printf("error");
+  printf("Enter the size of array\n");
+  if (scanf("%d", &a)!=1){
+  printf("Error");
     exit(0);
   }
   return a;
@@ -27,22 +27,35 @@ int input_array_size(){
 
 void input_array(int n, int a[n]){
   int i;
-  printf("wnter the number\n");
+  printf("Enter the number\n");
     for(i=1; i<n; i++){
-    if(scanf("%d", &a[i])!=1);
+    scanf("%d", &a[i]);
   }
 }
+int is_composite(int x){
+  int count=0;
+  for(int i = 1;i<=x;i++){
+    if(x%i == 0){
+      count++;
+      if(count == 3){
+        return(1);
+        }
+      }
+    }
+  return(0);
+  }
 
-int sum_composite_numbers(int n, int a[n]);
+int sum_composite_numbers(int n, int a[n]){
 int i, count = 0, sum = 0;
-for(i=o;i<=n;i++){
+for(i=0;i<=n;i++){
+  count = is_composite(a[i]);
   if(count == 1)
     sum = sum+a[i];
 }
 return(sum);
 }
 void output(int sum){
-printf("sum af alll the composite number is %d\n", sum);
+printf("sum af all the composite number is %d\n", sum);
 }
 
 
