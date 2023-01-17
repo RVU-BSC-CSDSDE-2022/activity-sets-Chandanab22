@@ -105,42 +105,6 @@ int input();
 int find_gcd(int a, int b);
 void output(int a, int b, int gcd);
 ```
-#include<stdio.h>
-
-int input();
-int find_gcd(int a, int b);
-void output(int a, int b, int gcd);
-
-int main(){
-  int a = input();
-  int b = input();
-  int gcd = find_gcd(a,b);
-  output(a,b,gcd);
-}
-
-int input(){
-  int x;
-  printf("Enter the number\n");
-  scanf("%d",&x);
-  return x;
-}
-
-int find_gcd(int a, int b){
-  int i,gcd;
-  for(i=1;i<=a && i <=b;i++){
-    if(a%i == 0 && b%i == 0)
-    gcd =i;
-  }
-  return gcd;
-}
-
-void output(int a, int b, int gcd){
-  printf("G.C.D of %d and %d is %d",a,b,gcd);
-}
-
-
-
-
 ***Input***
 ```
 12
@@ -167,6 +131,42 @@ void output(char *a, char *reverse_a);
 ```
 hello
 ```
+#include<stdio.h>
+#include<string.h>
+void input_string(char *a);
+void str_reverse(char *str, char *rev_str);
+void output(char *a, char *reverse_a);
+
+int main(){
+  char str[100],rev_str[100];
+  input_string(str); 
+  str_reverse(str,rev_str);
+  output(str,rev_str);
+  return 0;
+}
+
+void input_string(char *a){
+  printf("Enter the string\n");
+  scanf("%s",a);
+}
+
+void str_reverse(char *str, char *rev_str){
+  int i,len,rev;
+  len=strlen(str);
+  for(i=0;i< len/2;i++){
+    rev=str[i];
+    str[i]=str[len-i-1];
+    str[len-i-1]=rev;
+  }
+}
+
+void output(char *a, char *reverse_a){
+  printf("%s is the reverse string",a);
+}
+
+
+
+
 
 ***Output***
 ```
