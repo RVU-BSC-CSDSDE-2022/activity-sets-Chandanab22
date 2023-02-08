@@ -1,4 +1,4 @@
-#include <stdio.h>
+c,lear#include <stdio.h>
 #include <string.h>
 void input_two_strings(char *string1, char *string2);
 int stringcompare(char *string1, char *string2);

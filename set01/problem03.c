@@ -1,18 +1,20 @@
-#include <stdio.h>
-sum_calc(int x,int y,int *sum);
-  
-int main(void){
-  int a, b, sum;
-  printf("enter the first numbre\n");
-  scanf("%d", &a);
-  printf("enter the second number\n");
-  scanf("%d", &b);
-  sum_calc(a,b, &sum);
-  printf("sum is %d", sum);
-}
-  
+#include<stdio.h>
+int sum_func(int a, int b, int sum);
 
-sum_calc(int a, int b, int *sum)
+int main(void)
 {
-  *sum=a+b;
+int a,b,sum;
+printf("enter the first number\n");
+scanf("%d", &a);
+printf("enter the second number\n");
+scanf("%d", &b);
+sum=sum_func(a,b,sum);
+printf("%d", &sum);
+return 0;
 }
+
+int sum_func(int a, int b, int sum)
+{
+sum=a+b;
+return sum;
+} 

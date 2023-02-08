@@ -1,9 +1,8 @@
-#include <stdio.h>
-
-int main(void){
-  int a,b,sum;
-  a=4,b=5;
-  sum=a+b;
-  printf("%d %d %d",sum,a,b);
-  return 0;
-  }
+#include<stdio.h>
+int main(){
+int a,b,sum;
+a=6,b=9;
+sum=a+b;
+printf("%d %d %d", a,b,sum);
+return 0;
+}

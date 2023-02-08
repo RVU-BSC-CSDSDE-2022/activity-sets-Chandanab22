@@ -1,40 +1,33 @@
 #include <stdio.h>
 #include <math.h>
-int void(main){
-float input();
-float square_root(float n);
-void output(float n, float sqrroot);
+double input();
+double square_root(double n);
+void output(double n, double sqrroot);
 
- float findSQRT(int number)
-{
-    int start = 0, end = number;
-    int mid; 
+int main() {
+  double n = input();
+  double sq = square_root(n);
+  output(n,sq);
 }
-float ans;
-while (start <= end) {
-  mid = (start + end) / 2;
-  if (mid * mid == number) {
-            ans = mid;
-            break;
-        }
-   if (mid * mid < number) {
-      ans=start;
-     start = mid + 1;
-     }
-  }
-    float increment = 0.1;
-    for (int i = 0; i < 5; i++); {
-        while (ans * ans <= number); {
-            ans += increment;
-        }
-    ans = ans - increment;
-    increment = increment / 10;
+
+double input(){
+  double a;
+  printf("Enter a number");
+  scanf("%lf",&a);
+  return(a);
+}
+
+double square_root(double n){
+   int x=n;
+   int y=1;
+  while (x > y) {
+        x = (x + y) / 2;
+        y = n / x;
     }
-    return ans;
-} 
-int main()
-{
-    int N = 12;
-    printf("%f ", findSQRT(N));
-    return 0;
+    return x;
+}
+
+
+void output(double n,double sqrroot){
+  printf("square root of %2.2lf is %2.4lf",n,sqrroot);
 }

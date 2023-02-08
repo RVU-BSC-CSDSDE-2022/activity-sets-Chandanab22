@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 struct complex {
 	int real,img;
@@ -22,14 +23,14 @@ int main(){
 int get_n(){
   int a;
   printf("Enter a number.\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1);
   return(a);
 }
 
 Complex input_complex(){
   Complex a;
   printf("Enter a and b where a + ib is the first complex number.\n");
-   scanf("%d%d", &a.real, &a.img);
+   if(scanf("%d%d", &a.real, &a.img)!=1);
   return(a);
 }
 

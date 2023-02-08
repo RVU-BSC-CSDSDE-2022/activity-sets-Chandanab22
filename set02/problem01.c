@@ -11,7 +11,7 @@ void output(float base, float height, float area);
   void input(float base, float height){
     float area;
   printf("enter base and height:");
-  scanf("&f &f", &base, &height);
+  scanf("%f %f", &base, &height);
   float_area(base,height,&area);
   output(base,height,area);
   }
