@@ -1,43 +1,45 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include<math.h>
 
-int input_number();
-int is_prime(int n);
-void output(int n, int result);
+void input_triangle(float *x1, float *y1, float *x2, float *y2, float *x3, float *y3);
+int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3);
+void output(float x1, float y1, float x2, float y2,float x3, float y3, int result);
 
 
 int main(){
-   int n,result;
-   n = input_number();
-   if((n == 0)||(n == 1)){
-    printf("%d is neither prime nor composite\n", n);
-    exit(0);
+  float x1,x2,y1,y2,x3,y3,result;
+  input_triangle(&x1,&y1,&x2,&y2,&x3,&y3);
+  result = is_triangle(x1,y1,x2,y2,x3,y3);
+  output(x1,y1,x2,y2,x3,y3,result);
+  return 0;
+}  
+
+void input_triangle(float *x1, float *y1, float *x2, float *y2, float *x3, float *y3){
+  printf("Enter the coordinates of the first point:\n");
+  scanf("%f %f",x1,y1);
+  printf("Enter the coordinates of the second point:\n");
+  scanf("%f %f",x2,y2);
+  printf("Enter the coordinates of the third point:\n");
+  scanf("%f %f",x3,y3);
+}
+
+int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3){
+  float area;
+  area = 0.5*(x1*(y2 - y3)+ x2*(y3 - y1)+ x3*(y1 - y2));
+  if (area == 0)
+  {
+    return 1;
   }
-   result = is_prime(n);
-   output(n,result);
-   return 0;
-}
-
-int input_number(){
-  int n;
-  printf("Enter the integer to check for prime number\n ");
-  scanf("%d",&n);
-  return n;
-}
-
-int is_prime(int n){
-   int i,flag = 0;
-   for(i=2;i<=n/2;i++){
-     if(n%i == 0)
-      flag = 1;
-      break;
+  else{
+     return 2;
   }
-  return(flag);
 }
 
-void output(int n,int result){
-  if(result == 0)
-    printf("%d is a prime number",n);
-  else
-    printf("%d is not a prime number",n);
+void output(float x1, float y1, float x2, float y2,float x3, float y3, int result){
+  if (result == 1){
+    printf("The points (%f %f), (%f %f) and (%f %f) do not form a triangle",x1,y1,x2,y2,x3,y3);
+  }
+  else{
+      printf("The points (%f %f), (%f %f) and (%f %f) form a triangle",x1,y1,x2,y2,x3,y3);
+  }
 }
