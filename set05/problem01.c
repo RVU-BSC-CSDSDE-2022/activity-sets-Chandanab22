@@ -1,42 +1,35 @@
-#include<stdio.h>
-int input();
-void compare(int a, int b, int c, int*largest);
-void output(int a, int b, int c, int largest);
+#include <stdio.h>
+#include <math.h>
+struct _point {
+  float x;
+  float y;
+};
+
+typedef struct _point Point;
+Point input();
+void dist(Point a, Point b, float *res);
+void output(Point a, Point b, float res);
 
 int main(){
-int a, b,c,l;
-a=input();
-b=input();
-c=input();
-compare(a,b,c,&l);
-output(a,b,c,l);
-}
-int input(){
-int x;
-printf("entre a number\n");
-if(scanf("%d",&x)!=1)
-return(x);
+  Point a,b;
+  printf("Enter the values of the point x1 and y1\n");
+  a = input();
+  printf("Enter the values of the point x2 and y2\n");
+  b = input();
+  float res;
+  dist(a,b,&res);
+  output(a,b,res);
 }
 
-void compare(int a, int b, int c, int *largest){
-if(a>b)
-{
-if(a>c){
-*largest=a;
+Point input(){
+  Point a;
+  scanf("%f%f", &a.x, &a.y);
+  return(a);
 }
-else{
-*largest=c;
-}
-}
-else
-{
-if(b>c){
-*largest=b;}
-else{
-*largest=c;}
-}
+void dist(Point a, Point b, float *res){
+  *res = sqrt(pow((b.x-a.x),2) + pow((b.y-a.y),2));
 }
 
-void output(int a, int b, int c, int largest){
-printf("the largest of %d,%d,%d and %d is %d", a, b, c,largest);
+void output(Point a, Point b, float res){
+  printf("The Distance between (%2.1f,%2.1f) and (%2.1f,%2.1f) is %2.1f",a.x,b.x,a.y,b.y,res);
 }
